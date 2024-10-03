@@ -292,8 +292,13 @@ function isCreditCardNumber(/* ccn */) {
  *   10000 ( 1+0+0+0+0 = 1 ) => 1
  *   165536 (1+6+5+5+3+6 = 26,  2+6 = 8) => 8
  */
-function getDigitalRoot(/* num */) {
-  throw new Error('Not implemented');
+function getDigitalRoot(num) {
+  const arr = `${num}`.split('');
+  const sum = arr.reduce((acc, curr) => Number(acc) + Number(curr));
+  if (sum > 9) {
+    return `${sum}`.split('').reduce((acc, curr) => Number(acc) + Number(curr));
+  }
+  return sum;
 }
 
 
