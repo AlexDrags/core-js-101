@@ -159,6 +159,7 @@ function getStringsLength(arr) {
  *    [ 1, 'b', 'c'], 'x', 0  => [ 'x', 1, 'b', 'c' ]
  */
 function insertItem(/* arr, item, index */) {
+  // return [...arr.slice(0, index), ...[item], ...arr.slice(index)];
   throw new Error('Not implemented');
 }
 
@@ -340,8 +341,11 @@ function getPositivesCount(arr) {
  *   [ 'nine','eight','nine','eight'] => [ 'eight','eight','nine','nine']
  *   [ 'one','one','one','zero' ]     => [ 'zero','one','one','one' ]
  */
-function sortDigitNamesByNumericOrder(/* arr */) {
-  throw new Error('Not implemented');
+function sortDigitNamesByNumericOrder(arr) {
+  const arr2 = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
+  if (!arr.length) return [];
+  return arr.sort((currentVal, nextVal) => arr2.indexOf(nextVal) - arr2.indexOf(currentVal))
+    .reverse();
 }
 
 /**
