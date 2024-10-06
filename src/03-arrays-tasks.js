@@ -445,20 +445,6 @@ function toStringList(arr) {
  */
 function sortCitiesArray(/* arr */) {
   throw new Error('Not implemented');
-  // const arrCountry = arr.map((el) => (el.country)).sort();
-  // const bel = arr.map((item) => (item.country === 'Belarus' && item.city)).filter((i) => i).sort();
-  // const pol = arr.map((item) => (item.country === 'Poland' && item.city)).filter((i) => i).sort();
-  // const rus = arr.map((item) => (item.country === 'Russia' && item.city)).filter((i) => i).sort();
-  // const citys = ([...bel, ...pol, ...rus]);
-  // const doneArr = [];
-  // arr.map((item, index) => {
-  //   doneArr.push({
-  //     country: arrCountry[index],
-  //     city: citys[index],
-  //   });
-  //   return item;
-  // });
-  // return doneArr;
 }
 
 /**
