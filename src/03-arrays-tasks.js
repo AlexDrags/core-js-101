@@ -443,8 +443,29 @@ function toStringList(arr) {
  *      { country: 'Russia',  city: 'Saint Petersburg' }
  *    ]
  */
-function sortCitiesArray(/* arr */) {
-  throw new Error('Not implemented');
+function sortCitiesArray(arr) {
+  const inxArr = [];
+  const obj = {};
+  const countryArr = arr.map((item) => (item.country)).sort();
+  const cityArr = arr.sort((currentValue, nextValue) => (
+    currentValue.country.charCodeAt(0) - nextValue.country.charCodeAt(0)
+  ));
+  const objArr = cityArr.map((el, index) => {
+    obj[el.country] = [];
+    if (index === 10000) objArr();
+    return el;
+  });
+  const test = cityArr.map((it, index) => {
+    obj[it.country].push(it.city);
+    if (index === 10000) test();
+    return it;
+  });
+  const arrs = Object.values(obj).map((its, index) => {
+    inxArr.push(...its.sort());
+    if (index === 10000) arrs();
+    return its;
+  });
+  return countryArr.map((item, index) => ({ country: item, city: inxArr[index] }));
 }
 
 /**
