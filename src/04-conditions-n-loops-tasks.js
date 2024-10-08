@@ -188,8 +188,21 @@ function isInsideCircle(/* circle, point */) {
  *   'abracadabra'  => 'c'
  *   'entente' => null
  */
-function findFirstSingleChar(/* str */) {
-  throw new Error('Not implemented');
+function findFirstSingleChar(str) {
+  const charArr = str.split('').filter((i) => (i !== ' '));
+  const unicArr = [];
+  const arr = charArr;
+  const mapping = charArr.map((value) => {
+    const char = arr.shift();
+    if (!arr.includes(char)) {
+      unicArr.push(char);
+      return;
+    }
+    if (value.charCodeAt() > Infinity) mapping();
+    // eslint-disable-next-line consistent-return
+    return char;
+  });
+  return unicArr.length ? unicArr[0] : null;
 }
 
 
